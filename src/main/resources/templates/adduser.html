@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="jquery.js" ></script>
+<script src="adduser.js" ></script>
+</head>
+<body>
+	<form id="addform" action="#" th:action="@{/addUser}" th:object="${user}" method="post">
+		姓名：<input style="width:150px;" id="name" th:field="*{name}"/>
+		<input type="button" value="检查" onclick="check()"/>
+		<label id="message"></label><br>
+		年龄：<input style="width:150px;" th:field="*{age}"><br>
+		地址：<input style="width:150px;" th:field="*{address}"/><br>
+		<input style="width:50px;" type="submit" value="确定"/><br>
+	</form>
+</body>
+</html>
