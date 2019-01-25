@@ -1,5 +1,8 @@
 package com.singa.springboot.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +22,17 @@ public class UserController {
 	
 	@GetMapping(value = "/addUser")
 	public String addUser(Model model) {
-		model.addAttribute("user", new UserVo());
+		UserVo user = new UserVo();
+		user.setName("李四");
+		model.addAttribute("user", user);
+		
+		List<UserVo> list = new ArrayList<UserVo>(){
+			{
+				add(new UserVo("小张三","12"));
+				add(new UserVo("小李四","13"));
+			}
+		};
+		model.addAttribute("users", list);
 		return "addUser";
 	}
 	

@@ -4,6 +4,20 @@ public class UserVo {
 	public String name;
 	public String age;
 	public String address;
+	
+	public UserVo(){}
+	
+	public UserVo(String name, String age, String address) {
+		this.name = name;
+		this.age = age;
+		this.address = address;
+	}
+	
+	public UserVo(String name, String age) {
+		this.name = name;
+		this.age = age;
+	}
+	
 	public String getName() {
 		return name;
 	}
